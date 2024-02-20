@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_application_2/data/questions.dart';
-import 'package:flutter_application_2/pages/questions_summary/questions_summary.dart';
-import 'package:flutter_application_2/widgets/custom_text.dart';
+import 'package:flutter_quiz/data/questions.dart';
+import 'package:flutter_quiz/pages/questions_summary/questions_summary.dart';
+import 'package:flutter_quiz/widgets/custom_text.dart';
 
 class ResultsScreen extends StatelessWidget {
   const ResultsScreen({

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_application_2/widgets/custom_text.dart';
-import 'package:flutter_application_2/pages/questions_summary/question_identifier.dart';
+import 'package:flutter_quiz/widgets/custom_text.dart';
+import 'package:flutter_quiz/pages/questions_summary/question_identifier.dart';
 
 class SummaryItem extends StatelessWidget {
   const SummaryItem(this.itemData, {super.key});
