@@ -13,38 +13,38 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
-  Widget? screenWidget;
-  String? activeScreen;
-  List<String> selectedAnswers = [];
+  Widget? _screenWidget;
+  String? _activeScreen;
+  List<String> _selectedAnswers = [];
 
   void chooseAnswer(String answer) {
-    selectedAnswers.add(answer);
+    _selectedAnswers.add(answer);
 
-    if (selectedAnswers.length == questions.length) {
-      setState(() => activeScreen = 'results-screen');
+    if (_selectedAnswers.length == questions.length) {
+      setState(() => _activeScreen = 'results-screen');
     }
   }
 
-  void switchScreen() => setState(() => activeScreen = 'questions-screen');
+  void switchScreen() => setState(() => _activeScreen = 'questions-screen');
 
-  void restartQuiz(){
+  void restartQuiz() {
     setState(() {
-      selectedAnswers = [];
-      activeScreen = 'questions_screen';
+      _selectedAnswers = [];
+      _activeScreen = 'questions_screen';
     });
   }
 
   @override
   Widget build(context) {
-    Widget screenWidget = StartScreen(switchScreen);
+    _screenWidget = StartScreen(switchScreen);
 
-    if (activeScreen == 'questions-screen') {
-      screenWidget = QuestionScreen(onSelectAnswer: chooseAnswer);
+    if (_activeScreen == 'questions-screen') {
+      _screenWidget = QuestionScreen(onSelectAnswer: chooseAnswer);
     }
 
-    if (activeScreen == 'results-screen') {
-      screenWidget = ResultsScreen(
-        chosenAnswers: selectedAnswers,
+    if (_activeScreen == 'results-screen') {
+      _screenWidget = ResultsScreen(
+        chosenAnswers: _selectedAnswers,
         onRestart: restartQuiz,
       );
     }
@@ -62,7 +62,7 @@ class _QuizState extends State<Quiz> {
               end: Alignment.bottomRight,
             ),
           ),
-          child: screenWidget,
+          child: _screenWidget,
         ),
       ),
     );

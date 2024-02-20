@@ -38,12 +38,13 @@ class _QuestionScreenState extends State<QuestionScreen> {
               fontWeight: FontWeight.bold,
             ),
             const SizedBox(height: 30),
-            ...currentQuestion.getShuffledAnswers().map(
-                  (answer) => CustomButton(
+            ...currentQuestion.getShuffledAnswers().map((answer) => Container(
+                  margin: const EdgeInsets.only(bottom: 10),
+                  child: CustomButton(
                     label: answer,
                     onTap: () => answerQuestion(answer),
                   ),
-                )
+                ))
           ],
         ),
       ),
